@@ -80,14 +80,116 @@ class DatosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Datos Screen'),
-        ElevatedButton(
-          onPressed: () {
-            // Aquí puedes agregar la funcionalidad del botón
-          },
-          child: const Text('Botón en Datos'),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(14.0),
+            child: GridView.count(
+              crossAxisCount: 2, // Cantidad de columnas
+              crossAxisSpacing: 8,
+              mainAxisSpacing: 8,
+              childAspectRatio:
+                  1.5, // Proporción para ajustar el tamaño de los campos
+              children: <Widget>[
+                // Modalidad de Producción
+                _buildDropdownField(
+                    'MODALIDAD DE PRODUCCIÓN', ['Normal', 'Otra'], 'Normal'),
+                // Lote
+                _buildTextField('LOTE'),
+                // Maquinista
+                _buildDropdownField('MAQUINISTA', ['Agustin Fernandez', 'Otro'],
+                    'Agustin Fernandez'),
+                // Parte
+                _buildTextField('PARTE'),
+                // Producto
+                _buildDropdownField('PRODUCTO',
+                    ['CRISTAL EC30', 'Otro Producto'], 'CRISTAL EC30'),
+                // Gramaje
+                _buildDropdownField(
+                    'GRAMAJE', ['20,1 M5 R', 'Otro Gramaje'], '20,1 M5 R'),
+                // Ciclo Prom
+                _buildTextField('CICLO PROM'),
+                // Cavidades Habilitadas
+                _buildDropdownField(
+                    'CAVIDADES HABILITADAS', ['96', 'Otra cantidad'], '96'),
+                // Peso Promedio
+                _buildTextField('PESO PROMEDIO'),
+                // PA Inicial
+                _buildTextField('PA INICIAL'),
+                // PA Final
+                _buildTextField('PA FINAL'),
+                // Empaque
+                _buildDropdownField('EMPAQUE', ['JAULA GRANDE', 'Otro Empaque'],
+                    'JAULA GRANDE'),
+                // Cantidad
+                _buildTextField('CANTIDAD'),
+                // Peso Prom. en Cont. Neto
+                _buildTextField('PESO PROM. EN CONT. NETO'),
+                // Total de Cajas Controladas
+                _buildTextField('TOTAL DE CAJAS CONTROLADAS'),
+                // Saldos
+                _buildTextField('SALDOS'),
+                // Total de Cajas Producidas
+                _buildTextField('TOTAL DE CAJAS PRODUCIDAS'),
+                // Cantidad Total Piezas
+                _buildTextField('CANTIDAD TOTAL PIEZAS'),
+                // Cantidad Total KG
+                _buildTextField('CANTIDAD TOTAL KG'),
+                // Cantidad de Prod. Retenido
+                _buildTextField('CANTIDAD DE PROD. RETENIDO'),
+                // Conformidad Tiempo de Enfriamiento (Switch)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('CONFORMIDAD TIEMPO DE ENFRIAMIENTO'),
+                    Switch(
+                      value: false,
+                      onChanged: (bool newValue) {
+                        // Aquí puedes manejar el cambio de valor del switch
+                      },
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Método para construir campos de texto
+  Widget _buildTextField(String label) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label),
+        const TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+          ),
+        ),
+      ],
+    );
+  }
+
+  // Método para construir campos desplegables (Dropdown)
+  Widget _buildDropdownField(
+      String label, List<String> options, String defaultValue) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label),
+        DropdownButton<String>(
+          isExpanded: true,
+          value: defaultValue,
+          items: options.map((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(value),
+            );
+          }).toList(),
+          onChanged: (String? newValue) {},
         ),
       ],
     );
