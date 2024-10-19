@@ -11,13 +11,14 @@ class ScreenPreformaIPS extends StatefulWidget {
 class _ScreenPreformaIPSState extends State<ScreenPreformaIPS> {
   int _selectedIndex = 0;
 
+  // Lista de los widgets para cada pantalla
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Datos Screen'),
-    Text('Materia Prima y Aditivos Screen'),
-    Text('Defectos Screen'),
-    Text('Pesos Screen'),
-    Text('Monitoreo Screen'),
-    Text('Temperatura Screen'),
+    DatosScreen(),
+    MateriaPrimaAditivosScreen(),
+    DefectosScreen(),
+    PesosScreen(),
+    MonitoreoScreen(),
+    TemperaturaScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -42,8 +43,7 @@ class _ScreenPreformaIPSState extends State<ScreenPreformaIPS> {
             label: 'Datos',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-                Icons.shopping_cart), // Icono para "Materia Prima y Aditivos"
+            icon: Icon(Icons.shopping_cart), // Icono para "MP y Aditivos"
             label: 'MP y Aditivos',
           ),
           BottomNavigationBarItem(
@@ -69,6 +69,132 @@ class _ScreenPreformaIPSState extends State<ScreenPreformaIPS> {
             Colors.black, // Color para los íconos no seleccionados
         onTap: _onItemTapped,
       ),
+    );
+  }
+}
+
+// Pantalla de "Datos"
+class DatosScreen extends StatelessWidget {
+  const DatosScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Datos Screen'),
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes agregar la funcionalidad del botón
+          },
+          child: const Text('Botón en Datos'),
+        ),
+      ],
+    );
+  }
+}
+
+// Pantalla de "Materia Prima y Aditivos"
+class MateriaPrimaAditivosScreen extends StatelessWidget {
+  const MateriaPrimaAditivosScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Materia Prima y Aditivos Screen'),
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes agregar la funcionalidad del botón
+          },
+          child: const Text('Botón en MP y Aditivos'),
+        ),
+      ],
+    );
+  }
+}
+
+// Pantalla de "Defectos"
+class DefectosScreen extends StatelessWidget {
+  const DefectosScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Defectos Screen'),
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes agregar la funcionalidad del botón
+          },
+          child: const Text('Botón en Defectos'),
+        ),
+      ],
+    );
+  }
+}
+
+// Pantalla de "Pesos"
+class PesosScreen extends StatelessWidget {
+  const PesosScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Pesos Screen'),
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes agregar la funcionalidad del botón
+          },
+          child: const Text('Botón en Pesos'),
+        ),
+      ],
+    );
+  }
+}
+
+// Pantalla de "Monitoreo"
+class MonitoreoScreen extends StatelessWidget {
+  const MonitoreoScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Monitoreo Screen'),
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes agregar la funcionalidad del botón
+          },
+          child: const Text('Botón en Monitoreo'),
+        ),
+      ],
+    );
+  }
+}
+
+// Pantalla de "Temperatura"
+class TemperaturaScreen extends StatelessWidget {
+  const TemperaturaScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Temperatura Screen'),
+        ElevatedButton(
+          onPressed: () {
+            // Aquí puedes agregar la funcionalidad del botón
+          },
+          child: const Text('Botón en Temperatura'),
+        ),
+      ],
     );
   }
 }
