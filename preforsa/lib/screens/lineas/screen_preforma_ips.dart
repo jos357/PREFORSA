@@ -35,7 +35,7 @@ class _ScreenPreformaIPSState extends State<ScreenPreformaIPS> {
       ),
       drawer: const CustomDrawer(
         userName: 'Paul Perez',
-        userRole: 'Supervisor',
+        userRole: 'Auxiliar',
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
