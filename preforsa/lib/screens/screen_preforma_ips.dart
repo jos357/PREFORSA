@@ -89,7 +89,7 @@ class DatosScreen extends StatelessWidget {
               crossAxisSpacing: 8,
               mainAxisSpacing: 8,
               childAspectRatio:
-                  1.5, // Proporción para ajustar el tamaño de los campos
+                  1.8, // Proporción para ajustar el tamaño de los campos
               children: <Widget>[
                 // Modalidad de Producción
                 _buildDropdownField(
