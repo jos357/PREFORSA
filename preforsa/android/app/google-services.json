@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "796736896382",
+    "project_id": "preforsa-bbc79",
+    "storage_bucket": "preforsa-bbc79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796736896382:android:0d006442f298176ef7072f",
+        "android_client_info": {
+          "package_name": "com.example.preforsa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7HRxa3UqufK3_BbQzni6isCRXYJBe7Vo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

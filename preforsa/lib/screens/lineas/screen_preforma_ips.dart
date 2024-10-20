@@ -203,15 +203,20 @@ class MateriaPrimaAditivosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Materia Prima y Aditivos Screen'),
-        ElevatedButton(
-          onPressed: () {
-            // Aquí puedes agregar la funcionalidad del botón
-          },
-          child: const Text('Botón en MP y Aditivos'),
-        ),
+        Expanded(
+            child: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: GridView.count(
+            crossAxisCount: 2, // Cantidad de columnas
+            crossAxisSpacing: 8,
+            mainAxisSpacing: 8,
+            childAspectRatio: 1.8,
+            children: const <Widget>[
+              Text('Hola'),
+            ],
+          ),
+        ))
       ],
     );
   }

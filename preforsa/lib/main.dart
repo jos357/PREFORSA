@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:preforsa/screens/screen_preforma_ips.dart';
+import 'package:preforsa/screens/lineas/screen_preforma_ips.dart';
 
 void main() {
   runApp(const MyApp());
