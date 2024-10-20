@@ -69,6 +69,7 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+          const Divider(),
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('Opción 7'),
