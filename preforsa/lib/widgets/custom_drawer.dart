@@ -74,6 +74,42 @@ class CustomDrawer extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Opcion 2'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Opcion 3'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Opcion 4'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Opcion 5'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Opcion 6'),
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
           // Más opciones...
         ],
       ),
