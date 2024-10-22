@@ -104,7 +104,7 @@ class CustomDrawer extends StatelessWidget {
           ),
           const Divider(),
           ListTile(
-            leading: const Icon(Icons.dashboard),
+            leading: const Icon(Icons.settings),
             title: const Text('Configuraciones'),
             onTap: () {
               Navigator.pop(context);
