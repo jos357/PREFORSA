@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:preforsa/screens/lineas/screen_preforma_ips.dart';
+import 'package:preforsa/screens/lineas/preforma_ips/screen_preforma_ips.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
