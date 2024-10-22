@@ -69,35 +69,35 @@ class CustomDrawer extends StatelessWidget {
           // Opciones del Drawer
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opción 1'),
+            title: const Text('Yizumi'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 2'),
+            title: const Text('Preformas IPS'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 3'),
+            title: const Text('CCM'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 4'),
+            title: const Text('COLORACAP'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 5'),
+            title: const Text('Prefomas I5'),
             onTap: () {
               Navigator.pop(context);
             },
@@ -105,7 +105,7 @@ class CustomDrawer extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 6'),
+            title: const Text('Configuraciones'),
             onTap: () {
               Navigator.pop(context);
             },

@@ -230,7 +230,14 @@ class MateriaPrimaAditivosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('Materia Prima y Aditivos Screen'));
+    return const Column(
+      children: [
+        Text('Hola'),
+        Wrap(
+          children: [Text('Hola'), Text('Hola')],
+        )
+      ],
+    );
   }
 }
 
