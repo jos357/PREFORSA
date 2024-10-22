@@ -14,12 +14,13 @@ class _ScreenPreformaIPSState extends State<ScreenPreformaIPS> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    DatosScreen(),
+    
     MateriaPrimaAditivosScreen(),
     DefectosScreen(),
     PesosScreen(),
     MonitoreoScreen(),
     TemperaturaScreen(),
+    DatosScreen(),
   ];
 
   // Función para obtener el nombre y rol del usuario autenticado
