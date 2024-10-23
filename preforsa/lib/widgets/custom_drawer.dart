@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'popup_form.dart'; // Importamos el archivo del formulario
-import 'auxiliary_list.dart'; // Importamos la lista de auxiliares
 
 class CustomDrawer extends StatefulWidget {
   final String userName;
@@ -57,42 +55,23 @@ class _CustomDrawerState extends State<CustomDrawer> {
               PopupMenuButton<String>(
                 icon: const Icon(Icons.more_vert), // Icono de tres puntos
                 onSelected: (String value) {
-                  if (value == 'Verificar Supervisor') {
-                    // Si seleccionamos "Verificar Supervisor", mostramos el formulario
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const PopupForm(); // Llamamos al widget del formulario
-                      },
-                    ).then((result) {
-                      // Supongamos que después de verificar, obtenemos el nombre y rol actualizados
-                      if (result != null) {
-                        updateUser(result['userName'], 'Supervisor');
-                      }
-                    });
-                  } else if (value == 'Verificar Auxiliar') {
-                    // Si seleccionamos "Verificar Auxiliar", mostramos la lista de nombres
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) {
-                        return const AuxiliaryList(); // Llamamos a la lista de nombres
-                      },
-                    ).then((result) {
-                      if (result != null) {
-                        updateUser(result['userName'], 'Auxiliar');
-                      }
-                    });
+                  if (value == 'Cambiar Supervisor') {
+                    // Simulación de cambio de usuario a 'Supervisor'
+                    updateUser('Supervisor', 'Supervisor');
+                  } else if (value == 'Cambiar Auxiliar') {
+                    // Simulación de cambio de usuario a 'Auxiliar'
+                    updateUser('Auxiliar', 'Auxiliar');
                   }
                 },
                 itemBuilder: (BuildContext context) {
                   return [
                     const PopupMenuItem<String>(
-                      value: 'Verificar Supervisor',
-                      child: Text('Verificar Supervisor'),
+                      value: 'Cambiar Supervisor',
+                      child: Text('Cambiar a Supervisor'),
                     ),
                     const PopupMenuItem<String>(
-                      value: 'Verificar Auxiliar',
-                      child: Text('Verificar Auxiliar'),
+                      value: 'Cambiar Auxiliar',
+                      child: Text('Cambiar a Auxiliar'),
                     ),
                   ];
                 },

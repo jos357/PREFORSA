@@ -6,7 +6,6 @@ import 'package:preforsa/screens/lineas/preforma_ips/screens_form/monitoreo_scre
 import 'package:preforsa/screens/lineas/preforma_ips/screens_form/pesos_screen.dart';
 import 'package:preforsa/screens/lineas/preforma_ips/screens_form/temperatura_screen.dart';
 import 'package:preforsa/widgets/custom_drawer.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ScreenPreformaIPS extends StatefulWidget {
   const ScreenPreformaIPS({super.key});
@@ -28,32 +27,13 @@ class _ScreenPreformaIPSState extends State<ScreenPreformaIPS> {
     TemperaturaScreen(),
   ];
 
+  // Esta función ahora devuelve datos estáticos
   Future<Map<String, String>> _getUserData() async {
-    try {
-      QuerySnapshot<Map<String, dynamic>> supervisorSnapshot =
-          await FirebaseFirestore.instance
-              .collection('usuarios')
-              .where('rol', isEqualTo: 'Supervisor')
-              .get();
-
-      if (supervisorSnapshot.docs.isNotEmpty) {
-        var data = supervisorSnapshot.docs.first.data();
-        return {
-          'userName': data['nombre'],
-          'userRole': data['rol'],
-        };
-      } else {
-        return {
-          'userName': 'Ingresar',
-          'userRole': 'Auxiliar',
-        };
-      }
-    } catch (e) {
-      return {
-        'userName': 'Ingresar',
-        'userRole': 'Auxiliar',
-      };
-    }
+    // Simulación de obtener datos de un usuario
+    return {
+      'userName': 'Ingresar',
+      'userRole': 'Auxiliar',
+    };
   }
 
   void _onItemTapped(int index) {
