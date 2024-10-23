@@ -1,27 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:preforsa/screens/lineas/preforma_ips/screen_preforma_ips.dart';
 
-
+// ignore: camel_case_types
 class Screen_principal extends StatefulWidget {
-
   const Screen_principal({super.key});
 
   @override
   State<Screen_principal> createState() => _nameState();
 }
 
+// ignore: camel_case_types
 class _nameState extends State<Screen_principal> {
   bool _isObscured = true;
-  
+
   @override
   Widget build(BuildContext context) {
-     return Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: Column(
         children: [
           // Spacer para empujar el Container hacia abajo
-          Spacer(),  
-          
+          const Spacer(),
+
           // Container con el formulario de registro
           Center(
             child: Container(
@@ -29,7 +29,7 @@ class _nameState extends State<Screen_principal> {
               height: 459,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xcc000000),  // Fondo semi-transparente
+                color: const Color(0xcc000000), // Fondo semi-transparente
               ),
               padding: const EdgeInsets.all(20.0),
               child: Column(
@@ -37,7 +37,7 @@ class _nameState extends State<Screen_principal> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   // Texto de título
-                  Text(
+                  const Text(
                     "Bienvenido!!",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -46,9 +46,9 @@ class _nameState extends State<Screen_principal> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 10),
-                  
-                  Text(
+                  const SizedBox(height: 10),
+
+                  const Text(
                     "Sistema de Control de Calidad",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -57,13 +57,14 @@ class _nameState extends State<Screen_principal> {
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 20),  // Espacio entre el título y los campos
+                  const SizedBox(
+                      height: 20), // Espacio entre el título y los campos
 
                   // Campo de Username
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
                       labelText: 'Usuario',
-                      labelStyle: TextStyle(color: Colors.white,fontSize:16),
+                      labelStyle: TextStyle(color: Colors.white, fontSize: 16),
                       hintText: 'Usuario',
                       hintStyle: TextStyle(color: Colors.grey),
                       enabledBorder: UnderlineInputBorder(
@@ -74,64 +75,69 @@ class _nameState extends State<Screen_principal> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
 
-                   // Campo de Password
+                  // Campo de Password
                   TextField(
-      obscureText: _isObscured,  // Si es true, el texto está oculto; si es false, es visible
-      decoration: InputDecoration(
-        labelText: 'Contraseña',
-        labelStyle: TextStyle(color: Colors.white,fontSize:16),
-        hintText: 'xxxxxxxx',
-        hintStyle: TextStyle(color: Colors.grey),
-        suffixIcon: IconButton(
-          icon: Icon(
-            // Muestra un ícono diferente según el estado de la contraseña
-            _isObscured ? Icons.visibility_off : Icons.visibility,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            // Cambia la visibilidad de la contraseña
-            setState(() {
-              _isObscured = !_isObscured;
-            });
-          },
-        ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-        ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.orange),
-        ),
-      ),
-    ),
-                  SizedBox(height: 30),
+                    obscureText:
+                        _isObscured, // Si es true, el texto está oculto; si es false, es visible
+                    decoration: InputDecoration(
+                      labelText: 'Contraseña',
+                      labelStyle:
+                          const TextStyle(color: Colors.white, fontSize: 16),
+                      hintText: 'xxxxxxxx',
+                      hintStyle: const TextStyle(color: Colors.grey),
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          // Muestra un ícono diferente según el estado de la contraseña
+                          _isObscured ? Icons.visibility_off : Icons.visibility,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          // Cambia la visibilidad de la contraseña
+                          setState(() {
+                            _isObscured = !_isObscured;
+                          });
+                        },
+                      ),
+                      enabledBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: const UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.orange),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 30),
 
                   // Botón de registro
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ScreenPreformaIPS()),  // Nueva clase
-                );// Acción al presionar el botón
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const ScreenPreformaIPS()), // Nueva clase
+                      ); // Acción al presionar el botón
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 15),
                       backgroundColor: Colors.orange, // Color de fondo
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       "INGRESAR",
                       style: TextStyle(fontSize: 16, color: Colors.white),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
 
                   // Texto de inicio de sesión
                   RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: "Desarrollado por ",
                       style: TextStyle(color: Colors.white),
                       children: <TextSpan>[
@@ -146,13 +152,11 @@ class _nameState extends State<Screen_principal> {
               ),
             ),
           ),
-          
+
           // Espacio inferior para dejar margen al final de la pantalla
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
         ],
       ),
     );
   }
 }
-
-
