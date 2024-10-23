@@ -1,9 +1,8 @@
-// custom_drawer.dart
 import 'package:flutter/material.dart';
 import 'popup_form.dart'; // Importamos el archivo del formulario
 import 'auxiliary_list.dart'; // Importamos la lista de auxiliares
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
   final String userName;
   final String userRole;
 
@@ -14,17 +13,42 @@ class CustomDrawer extends StatelessWidget {
   });
 
   @override
+  // ignore: library_private_types_in_public_api
+  _CustomDrawerState createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  late String currentUserName;
+  late String currentUserRole;
+
+  @override
+  void initState() {
+    super.initState();
+    // Inicializamos con los valores que vienen del widget
+    currentUserName = widget.userName;
+    currentUserRole = widget.userRole;
+  }
+
+  // Función para actualizar los valores del usuario
+  void updateUser(String newUserName, String newUserRole) {
+    setState(() {
+      currentUserName = newUserName;
+      currentUserRole = newUserRole;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text(userName),
-            accountEmail: Text(userRole),
+            accountName: Text(currentUserName),
+            accountEmail: Text(currentUserRole),
             currentAccountPicture: CircleAvatar(
               child: Text(
-                userName[0], // Inicial del nombre del usuario
+                currentUserName[0], // Inicial del nombre del usuario
                 style: const TextStyle(fontSize: 40.0),
               ),
             ),
@@ -40,7 +64,12 @@ class CustomDrawer extends StatelessWidget {
                       builder: (BuildContext context) {
                         return const PopupForm(); // Llamamos al widget del formulario
                       },
-                    );
+                    ).then((result) {
+                      // Supongamos que después de verificar, obtenemos el nombre y rol actualizados
+                      if (result != null) {
+                        updateUser(result['userName'], 'Supervisor');
+                      }
+                    });
                   } else if (value == 'Verificar Auxiliar') {
                     // Si seleccionamos "Verificar Auxiliar", mostramos la lista de nombres
                     showDialog(
@@ -48,7 +77,11 @@ class CustomDrawer extends StatelessWidget {
                       builder: (BuildContext context) {
                         return const AuxiliaryList(); // Llamamos a la lista de nombres
                       },
-                    );
+                    ).then((result) {
+                      if (result != null) {
+                        updateUser(result['userName'], 'Auxiliar');
+                      }
+                    });
                   }
                 },
                 itemBuilder: (BuildContext context) {
@@ -69,47 +102,50 @@ class CustomDrawer extends StatelessWidget {
           // Opciones del Drawer
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opción 1'),
+            title: const Text('Yizumi'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 2'),
+            title: const Text('Preformas IPS'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 3'),
+            title: const Text('CCM'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 4'),
+            title: const Text('COLORACAP'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 5'),
+            title: const Text('Prefomas I5'),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           const Divider(),
-          ListTile(
-            leading: const Icon(Icons.dashboard),
-            title: const Text('Opcion 6'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
+          // Condición para mostrar la opción de "Configuraciones"
+          if (currentUserRole == 'Supervisor')
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Configuraciones'),
+              onTap: () {
+                Navigator.pop(context);
+                // Navegar a la pantalla de configuraciones
+              },
+            ),
           // Más opciones...
         ],
       ),
