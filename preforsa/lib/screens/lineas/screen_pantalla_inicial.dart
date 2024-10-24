@@ -20,7 +20,7 @@ class _nameState extends State<Screen_principal> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/FondoApp_1.jpg'), // Asegúrate de que la imagen esté en la carpeta correcta
+                image: AssetImage('assets/images/FondoApp_1'), // Asegúrate de que la imagen esté en la carpeta correcta
                 fit: BoxFit.cover,
               ),
             ),
@@ -143,7 +143,7 @@ class _nameState extends State<Screen_principal> {
                           style: TextStyle(color: Colors.white),
                           children: <TextSpan>[
                             TextSpan(
-                              text: 'DEV-SIGMA',
+                              text: 'SIGMA-DEV',
                               style: TextStyle(color: Colors.orange),
                             ),
                           ],
