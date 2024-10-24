@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:preforsa/screens/lineas/preforma_ips/screen_preforma_ips.dart';
+import 'package:preforsa/screens/lineas/screen_pantalla_inicial.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ScreenPreformaIPS(), // Pantalla principal
+      home: const Screen_principal(), // Pantalla principal
     );
   }
 }

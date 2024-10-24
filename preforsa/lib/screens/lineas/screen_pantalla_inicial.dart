@@ -20,7 +20,7 @@ class _nameState extends State<Screen_principal> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/FondoApp_1'), // Asegúrate de que la imagen esté en la carpeta correcta
+                image: AssetImage('assets/images/FondoApp_1.jpg'), // Asegúrate de que la imagen esté en la carpeta correcta
                 fit: BoxFit.cover,
               ),
             ),
@@ -35,7 +35,7 @@ class _nameState extends State<Screen_principal> {
               Center(
                 child: Container(
                   width: 322,
-                  height: 459,
+                  height: 410,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Color(0xcc000000),  // Fondo semi-transparente
@@ -153,7 +153,7 @@ class _nameState extends State<Screen_principal> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 25),
             ],
           ),
         ],
