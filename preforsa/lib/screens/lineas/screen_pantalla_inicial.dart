@@ -20,8 +20,8 @@ class _nameState extends State<Screen_principal> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/FondoApp_1.jpg'), // Asegúrate de que la imagen esté en la carpeta correcta
-                fit: BoxFit.cover,
+                image: AssetImage('images/FondoApp_1.jpg'), // Asegúrate de que la imagen esté en la carpeta correcta
+                fit: BoxFit.fill,
               ),
             ),
           ),
